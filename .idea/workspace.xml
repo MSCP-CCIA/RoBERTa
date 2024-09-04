@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Versioned" />
+    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Versioned">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +29,12 @@
     &quot;assignee&quot;: &quot;MSCP-CCIA&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/MSCP-CCIA/creditCardFraud.git&quot;,
-    &quot;accountId&quot;: &quot;da735335-7c2d-486d-abe9-20773d630f5d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MSCP-CCIA/creditCardFraud.git",
+    "accountId": "422e8d55-f260-4e12-ac9d-ff0b76c6aba4"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
