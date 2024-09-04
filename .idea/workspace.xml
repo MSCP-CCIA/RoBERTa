@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Versioned">
-      <change afterPath="$PROJECT_DIR$/notebooks/analysis-credit-card-fraud.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training/tests/test_RandomForest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/movies_dataset.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/movies_final.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/movies_ml.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/movies_EDA_ML.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/movies_analysis_ETL.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/tests/movies_EDA_ML.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/tests/movies_analysis_ETL.ipynb" beforeDir="false" />
-    </list>
+    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="V1.1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +67,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Data Loaded" />
     <MESSAGE value="Data Versioned" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data Versioned" />
+    <MESSAGE value="V1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.1" />
   </component>
 </project>
