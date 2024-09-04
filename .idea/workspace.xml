@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/RoBERTa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RoBERTa.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/notebook_1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/notebook_1.ipynb" afterDir="false" />
+    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Loaded">
+      <change beforePath="$PROJECT_DIR$/data/test-00000-of-00001.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/Raw_Data.parquet" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,4 +58,8 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Data Loaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data Loaded" />
+  </component>
 </project>
