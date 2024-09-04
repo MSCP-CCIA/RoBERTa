@@ -1,21 +1,26 @@
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve, auc, f1_score, confusion_matrix, classification_report
+from sklearn.metrics import roc_curve, precision_recall_curve, auc, f1_score
 import numpy as np
 from tqdm import tqdm
+from training.tests.undersampling import UnderSampling
+import warnings
+warnings.filterwarnings('ignore')
 
+submuestras=UnderSampling()
 auc_lis = []
 pr_lis = []
 f1_lis = []
-resultados = {}
-x_cols = columns_final[:-1]
-y_cols = columns_final[-1]
+X_test=pd.read_csv('data/X_test.csv')
+y_test=pd.read_csv('data/y_test.csv')
+
 for sub in tqdm(submuestras):
     model = RandomForestClassifier()
-    model.fit(sub[x_cols], sub[y_cols])
+    model.fit(sub[0], sub[1])
 
     # Predicción
-    y_scores = model.predict_proba(X_test[x_cols])[:, 1]
-    y_pred = model.predict(X_test[x_cols])
+    y_scores = model.predict_proba(X_test)[:, 1]
+    y_pred = model.predict(X_test)
 
     # Calcular la curva AUC-ROC
     fpr, tpr, _ = roc_curve(y_test, y_scores)
@@ -35,6 +40,4 @@ for sub in tqdm(submuestras):
 roc_auc = round(np.mean(auc_lis)*100,1)
 pr_auc = round(np.mean(pr_lis)*100,1)
 f1 = round(np.mean(f1_lis)*100,1)
-
-
-resultados["BosqueAleatorio"]=[roc_auc, pr_auc, f1]
+print(f'f1:{f1},pr_auc:{pr_auc},roc_auc:{roc_auc}')
