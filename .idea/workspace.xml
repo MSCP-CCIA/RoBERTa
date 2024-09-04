@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="V1.1" />
+    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="V1.1">
+      <change afterPath="$PROJECT_DIR$/data/creditcard.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training/tests/test_Preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/analysis-credit-card-fraud.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/analysis-credit-card-fraud.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training/tests/test_RandomForest.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/tests/test_RandomForest.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +58,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\DataspellProjects\creditCardFraud\data" />
       <recent name="C:\Users\Asus\DataspellProjects\creditCardFraud\notebooks" />
       <recent name="C:\Users\Asus\DataspellProjects\RoBERTa\data" />
     </key>

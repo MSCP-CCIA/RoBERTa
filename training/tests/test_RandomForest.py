@@ -1,6 +1,18 @@
+from imblearn.under_sampling import RandomUnderSampler
 from sklearn.ensemble import RandomForestClassifier
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(df, df["Class"], test_size=0.2, stratify=df["Class"], random_state=42)
+
+N_SAMPLES = 200
+RATIO= 0.30
+submuestras = []
+
+for i in tqdm(range(N_SAMPLES)):
+    random_undersampler = RandomUnderSampler(sampling_strategy=RATIO)
+    X_resampled, y_resampled = random_undersampler.fit_resample(X_train, y_train)
+    submuestras.append(X_resampled)
+
 resultados = {}
 auc_lis = []
 pr_lis = []
