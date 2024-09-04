@@ -7,7 +7,7 @@ f1_lis = []
 for sub in tqdm(submuestras):
     model = DecisionTreeClassifier()
     model.fit(sub[x_cols], sub[y_cols])
-
+    #a
     # Predicción
     y_scores = model.predict_proba(X_test[x_cols])[:, 1]
     y_pred = model.predict(X_test[x_cols])
