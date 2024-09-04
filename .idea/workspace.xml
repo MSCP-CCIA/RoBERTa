@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Loaded">
-      <change beforePath="$PROJECT_DIR$/data/test-00000-of-00001.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/Raw_Data.parquet" afterDir="false" />
+    <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Versioned">
+      <change afterPath="$PROJECT_DIR$/data/movies_dataset.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/movies_final.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/movies_ml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/movies_EDA_ML.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/movies_analysis_ETL.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training/tests/movies_EDA_ML.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training/tests/movies_analysis_ETL.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Raw_Data.parquet" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Test-00000-of-00001.parquet" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/train-00000-of-00001.parquet" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/validation-00000-of-00001.parquet" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/notebook_1.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +40,12 @@
     &quot;assignee&quot;: &quot;MSCP-CCIA&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/MSCP-CCIA/RoBERTa.git&quot;,
-    &quot;accountId&quot;: &quot;422e8d55-f260-4e12-ac9d-ff0b76c6aba4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MSCP-CCIA/RoBERTa.git",
+    "accountId": "da735335-7c2d-486d-abe9-20773d630f5d"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -47,9 +59,15 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Asus/DataspellProjects/RoBERTa/training/tests",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\DataspellProjects\RoBERTa\data" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -60,6 +78,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Data Loaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data Loaded" />
+    <MESSAGE value="Data Versioned" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data Versioned" />
   </component>
 </project>
