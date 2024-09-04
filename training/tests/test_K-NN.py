@@ -1,6 +1,7 @@
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve, auc, f1_score, confusion_matrix, classification_report
-from sklearn.model_selection import GridSearchCV
+import numpy as np
+from tqdm import tqdm
 
 auc_lis = []
 pr_lis = []

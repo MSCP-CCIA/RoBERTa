@@ -1,3 +1,7 @@
+from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve, auc, f1_score, confusion_matrix, classification_report
+from sklearn.tree import DecisionTreeClassifier
+import numpy as np
+from tqdm import tqdm
 
 resultados={}
 auc_lis = []

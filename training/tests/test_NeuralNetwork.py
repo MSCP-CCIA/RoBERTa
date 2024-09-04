@@ -1,5 +1,5 @@
-from sklearn.naive_bayes import BernoulliNB
 from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve, auc, f1_score, confusion_matrix, classification_report
+from sklearn.tree import MLPClassifier
 import numpy as np
 from tqdm import tqdm
 
@@ -8,8 +8,9 @@ auc_lis = []
 pr_lis = []
 f1_lis = []
 
+
 for sub in tqdm(submuestras):
-    model = BernoulliNB()
+    model = MLPClassifier()
     model.fit(sub[x_cols], sub[y_cols])
 
     # Predicción
@@ -35,5 +36,4 @@ roc_auc = round(np.mean(auc_lis)*100,1)
 pr_auc = round(np.mean(pr_lis)*100,1)
 f1 = round(np.mean(f1_lis)*100,1)
 
-
-resultados["NaiveBayes"]=[roc_auc, pr_auc, f1]
+resultados["RedesNeuronales"]=[roc_auc, pr_auc, f1]
