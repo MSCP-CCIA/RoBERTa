@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Versioned">
-      <change afterPath="$PROJECT_DIR$/training/tests/test_LogisticRegression.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training/tests/test_NeuralNetwork.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training/src/trainTestSplit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/RoBERTa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RoBERTa.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/tests/test_BernoullinNB.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/tests/test_BernoullinNB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/tests/test_DecisionTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/tests/test_DecisionTree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/tests/test_K-NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/tests/test_K-NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/tests/test_RandomForest.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/tests/test_RandomForest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Asus\DataspellProjects\creditCardFraud\data" />
       <recent name="C:\Users\cracm\DataspellProjects\creditCardFraud\data" />
       <recent name="C:\Users\Asus\DataspellProjects\creditCardFraud\notebooks" />
       <recent name="C:\Users\Asus\DataspellProjects\RoBERTa\data" />
