@@ -1,14 +1,13 @@
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import BernoulliNB
 from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve, auc, f1_score, confusion_matrix, classification_report
-from sklearn.model_selection import GridSearchCV
+import numpy as np
+resultados={}
 auc_lis = []
 pr_lis = []
 f1_lis = []
-resultados = {}
-x_cols = columns_final[:-1]
-y_cols = columns_final[-1]
+
 for sub in tqdm(submuestras):
-    model = RandomForestClassifier()
+    model = BernoulliNB()
     model.fit(sub[x_cols], sub[y_cols])
 
     # Predicción
@@ -35,4 +34,4 @@ pr_auc = round(np.mean(pr_lis)*100,1)
 f1 = round(np.mean(f1_lis)*100,1)
 
 
-resultados["BosqueAleatorio"]=[roc_auc, pr_auc, f1]
+resultados["NaiveBayes"]=[roc_auc, pr_auc, f1]

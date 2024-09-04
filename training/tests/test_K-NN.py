@@ -1,19 +1,19 @@
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve, auc, f1_score, confusion_matrix, classification_report
 from sklearn.model_selection import GridSearchCV
+
 auc_lis = []
 pr_lis = []
 f1_lis = []
 resultados = {}
-x_cols = columns_final[:-1]
-y_cols = columns_final[-1]
+
 for sub in tqdm(submuestras):
-    model = RandomForestClassifier()
-    model.fit(sub[x_cols], sub[y_cols])
+    knn = KNeighborsClassifier()
+    knn.fit(sub[x_cols], sub[y_cols])
 
     # Predicción
-    y_scores = model.predict_proba(X_test[x_cols])[:, 1]
-    y_pred = model.predict(X_test[x_cols])
+    y_scores = knn.predict_proba(X_test[x_cols])[:, 1]
+    y_pred = knn.predict(X_test[x_cols])
 
     # Calcular la curva AUC-ROC
     fpr, tpr, _ = roc_curve(y_test, y_scores)
@@ -35,4 +35,4 @@ pr_auc = round(np.mean(pr_lis)*100,1)
 f1 = round(np.mean(f1_lis)*100,1)
 
 
-resultados["BosqueAleatorio"]=[roc_auc, pr_auc, f1]
+resultados["KNN"]=[roc_auc, pr_auc, f1]
