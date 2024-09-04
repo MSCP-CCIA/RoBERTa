@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34bde024-3ad3-494c-b9f8-250ad1a7428a" name="Changes" comment="Data Versioned">
-      <change afterPath="$PROJECT_DIR$/data/movies_dataset.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/movies_final.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/movies_ml.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/movies_EDA_ML.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/movies_analysis_ETL.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training/tests/movies_EDA_ML.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training/tests/movies_analysis_ETL.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/analysis-credit-card-fraud.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training/tests/test_RandomForest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Raw_Data.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Test-00000-of-00001.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train-00000-of-00001.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation-00000-of-00001.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/notebook_1.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/movies_dataset.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/movies_final.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/movies_ml.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/movies_EDA_ML.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/movies_analysis_ETL.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training/tests/movies_EDA_ML.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training/tests/movies_analysis_ETL.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -40,12 +38,12 @@
     &quot;assignee&quot;: &quot;MSCP-CCIA&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/MSCP-CCIA/RoBERTa.git",
-    "accountId": "da735335-7c2d-486d-abe9-20773d630f5d"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MSCP-CCIA/creditCardFraud.git&quot;,
+    &quot;accountId&quot;: &quot;da735335-7c2d-486d-abe9-20773d630f5d&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -55,16 +53,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Asus/DataspellProjects/RoBERTa/training/tests",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/DataspellProjects/RoBERTa/training/tests&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\DataspellProjects\creditCardFraud\notebooks" />
       <recent name="C:\Users\Asus\DataspellProjects\RoBERTa\data" />
     </key>
   </component>
