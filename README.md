@@ -27,7 +27,7 @@ A short description of the project.
 │                         `1.0-jqp-initial-data-exploration`.
 │
 ├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         creditcardfraud and configuration for tools like black
+│                         creditCardFraud and configuration for tools like black
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
@@ -39,9 +39,9 @@ A short description of the project.
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── creditcardfraud   <- Source code for use in this project.
+└── creditCardFraud   <- Source code for use in this project.
     │
-    ├── __init__.py             <- Makes creditcardfraud a Python module
+    ├── __init__.py             <- Makes creditCardFraud a Python module
     │
     ├── config.py               <- Store useful variables and configuration
     │

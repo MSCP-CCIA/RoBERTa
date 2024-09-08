@@ -2,7 +2,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = creditcardfraud
+PROJECT_NAME = creditCardFraud
 PYTHON_VERSION = 3.12
 PYTHON_INTERPRETER = python
 
@@ -29,14 +29,14 @@ clean:
 ## Lint using flake8 and black (use `make format` to do formatting)
 .PHONY: lint
 lint:
-	flake8 creditcardfraud
-	isort --check --diff --profile black creditcardfraud
-	black --check --config pyproject.toml creditcardfraud
+	flake8 creditCardFraud
+	isort --check --diff --profile black creditCardFraud
+	black --check --config pyproject.toml creditCardFraud
 
 ## Format source code with black
 .PHONY: format
 format:
-	black --config pyproject.toml creditcardfraud
+	black --config pyproject.toml creditCardFraud
 
 
 
@@ -58,7 +58,7 @@ create_environment:
 ## Make Dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) creditcardfraud/dataset.py
+	$(PYTHON_INTERPRETER) creditCardFraud/dataset.py
 
 
 #################################################################################

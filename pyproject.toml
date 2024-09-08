@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "creditcardfraud"
+name = "creditCardFraud"
 version = "0.1.0"
 description = ""
 authors = ["Khaelf0ns <mhatt.fons@gmail.com>"]
