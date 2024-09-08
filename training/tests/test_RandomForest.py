@@ -5,14 +5,15 @@ import numpy as np
 from tqdm import tqdm
 from training.tests.undersampling import UnderSampling
 import warnings
-warnings.filterwarnings('ignore')
 
-submuestras=UnderSampling()
+warnings.filterwarnings("ignore")
+
+submuestras = UnderSampling()
 auc_lis = []
 pr_lis = []
 f1_lis = []
-X_test=pd.read_csv('data/X_test.csv')
-y_test=pd.read_csv('data/y_test.csv')
+X_test = pd.read_csv("data/X_test.csv")
+y_test = pd.read_csv("data/y_test.csv")
 
 for sub in tqdm(submuestras):
     model = RandomForestClassifier()
@@ -37,7 +38,7 @@ for sub in tqdm(submuestras):
     pr_lis.append(pr_auc)
     f1_lis.append(f1)
 
-roc_auc = round(np.mean(auc_lis)*100,1)
-pr_auc = round(np.mean(pr_lis)*100,1)
-f1 = round(np.mean(f1_lis)*100,1)
-print(f'f1:{f1},pr_auc:{pr_auc},roc_auc:{roc_auc}')
+roc_auc = round(np.mean(auc_lis) * 100, 1)
+pr_auc = round(np.mean(pr_lis) * 100, 1)
+f1 = round(np.mean(f1_lis) * 100, 1)
+print(f"f1:{f1},pr_auc:{pr_auc},roc_auc:{roc_auc}")
