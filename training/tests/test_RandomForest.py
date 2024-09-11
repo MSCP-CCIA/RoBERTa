@@ -3,16 +3,16 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_curve, precision_recall_curve, auc, f1_score
 import numpy as np
 from tqdm import tqdm
-from training.tests.undersampling import UnderSampling
+from undersampling import UnderSampling
 import warnings
-from hydra import initialize, compose
-from omegaconf import OmegaConf
+from hydra import main
 
 warnings.filterwarnings("ignore")
 
 
-def main(cfg):
-    submuestras = UnderSampling()
+@main(config_path="../../config/", config_name="config", version_base=None)
+def train_RandomForest(cfg):
+    submuestras = UnderSampling(cfg)
     auc_lis = []
     pr_lis = []
     f1_lis = []
@@ -22,7 +22,7 @@ def main(cfg):
     y_test = pd.read_csv(cfg.data.y_test_path)
 
     for sub in tqdm(submuestras):
-        model = RandomForestClassifier(n_estimators=cfg.model.n_estimators, max_depth=cfg.model.max_depth)
+        model = RandomForestClassifier()
         model.fit(sub[0], sub[1])
 
         # Predicción
@@ -51,7 +51,4 @@ def main(cfg):
 
 
 if __name__ == "__main__":
-    with initialize(config_path=".", config_name="config"):
-        cfg = compose(config_name="config")
-        OmegaConf.resolve(cfg)  # Resolves any interpolation and placeholders
-        main(cfg)
+    train_RandomForest()

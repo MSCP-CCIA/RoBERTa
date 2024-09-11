@@ -1,7 +1,7 @@
 import pandas as pd
+from sklearn.naive_bayes import BernoulliNB
 from sklearn.metrics import roc_curve, precision_recall_curve, auc, f1_score
 import numpy as np
-from sklearn.neighbors import KNeighborsClassifier
 from tqdm import tqdm
 from undersampling import UnderSampling
 import warnings
@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 
 
 @main(config_path="../../config/", config_name="config", version_base=None)
-def train_KNN(cfg):
+def train_BernoulliNB(cfg):
     submuestras = UnderSampling(cfg)
     auc_lis = []
     pr_lis = []
@@ -22,12 +22,12 @@ def train_KNN(cfg):
     y_test = pd.read_csv(cfg.data.y_test_path)
 
     for sub in tqdm(submuestras):
-        knn = KNeighborsClassifier()
-        knn.fit(sub[0], sub[1])
+        model = BernoulliNB()
+        model.fit(sub[0], sub[1])
 
         # Predicción
-        y_scores = knn.predict_proba(X_test)[:, 1]
-        y_pred = knn.predict(X_test)
+        y_scores = model.predict_proba(X_test)[:, 1]
+        y_pred = model.predict(X_test)
 
         # Calcular la curva AUC-ROC
         fpr, tpr, _ = roc_curve(y_test, y_scores)
@@ -51,4 +51,4 @@ def train_KNN(cfg):
 
 
 if __name__ == "__main__":
-    train_KNN()
+    train_BernoulliNB()
