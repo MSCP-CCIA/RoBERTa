@@ -1,0 +1,6 @@
+data:
+  x_test_path: "data/data_test/X_test.csv"
+  y_test_path: "data/data_test/Y_test.csv"
+  x_test_path: "data/data_train/X_train.csv"
+  y_test_path: "data/data_train/Y_train.csv"
+
