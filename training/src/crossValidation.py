@@ -1,64 +1,71 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import cross_val_score, StratifiedKFold
-from sklearn.metrics import accuracy_score
+from sklearn.model_selection import GridSearchCV, RandomizedSearchCV, StratifiedKFold
+from sklearn.metrics import accuracy_score, auc, f1_score, precision_recall_curve, roc_curve
 from tqdm import tqdm
 import warnings
+from undersampling import UnderSampling
 from hydra import main
 from joblib import dump
 import logging
-
+ 
 warnings.filterwarnings("ignore")
-
+ 
 # Configurar logging para guardar las métricas en un archivo log
-logging.basicConfig(filename='model_metrics.log', level=logging.INFO,
+logging.basicConfig(filename='model_metrics.log', level=logging.INFO, 
                     format='%(asctime)s - %(message)s', filemode='w')
-
+ 
 @main(config_path="../../config/", config_name="config", version_base=None)
-def train_RandomForest(cfg):
-    # Leer datos desde las rutas configuradas
-    X_train = pd.read_csv(cfg.data.x_train_path)
-    y_train = pd.read_csv(cfg.data.y_train_path)
+def CrossValidation(cfg):
+    submuestras = UnderSampling(cfg)
+    X_test = pd.read_csv(cfg.data.x_test_path)
+    y_test = pd.read_csv(cfg.data.y_test_path)
+    # Definir los hiperparámetros a ajustar
+    param_grid = {
+        'n_estimators': cfg.model.n_estimators,           # Número de árboles en el bosque
+        'max_depth': cfg.model.max_depth,          # Profundidad máxima de los árboles
+        'min_samples_split': cfg.model.min_samples_split,          # Número mínimo de muestras requeridas para dividir un nodo interno
+        'min_samples_leaf': cfg.model.min_samples_leaf             # Número mínimo de muestras requeridas para estar en un nodo hoja
+    }
 
-    # Configurar el clasificador RandomForest
-    model = RandomForestClassifier(
-        n_estimators=cfg.model.n_estimators,
-        max_depth=cfg.model.max_depth,
-        min_samples_split=cfg.model.min_samples_split,
-        min_samples_leaf=cfg.model.min_samples_leaf
-    )
+    auc_lis = []
+    pr_lis = []
+    f1_lis = []
+    n_estimators_lis = []
+    max_depth_lis = []
+    min_samples_split_lis = []
+    min_samples_leaf_lis = []
 
-    # Cross-validation
-    skf = StratifiedKFold(n_splits=cfg.model.cv_splits, shuffle=True, random_state=42)
-    best_score = 0
-    best_model = None
+    for sub in tqdm(submuestras[:20]):
+    # Definir el clasificador RandomForest
+        rf_classifier = RandomForestClassifier()
+        model = GridSearchCV(estimator=rf_classifier, param_grid=param_grid, scoring='average_precision', cv=2)
+        model.fit(sub[0], sub[1])
 
-    # Realizar la validación cruzada
-    for fold, (train_idx, val_idx) in enumerate(skf.split(X_train, y_train)):
-        X_train_fold, X_val_fold = X_train.iloc[train_idx], X_train.iloc[val_idx]
-        y_train_fold, y_val_fold = y_train.iloc[train_idx], y_train.iloc[val_idx]
+        # Predicción
+        y_scores = model.predict_proba(X_test)[:, 1]
+        y_pred = model.predict(X_test)
 
-        tqdm(model.fit(X_train_fold, y_train_fold))  # Entrenar el modelo
+        # Calcular la curva AUC-ROC
+        fpr, tpr, _ = roc_curve(y_test, y_scores)
+        roc_auc = auc(fpr, tpr)
 
-        # Predicciones en la validación
-        y_pred = model.predict(X_val_fold)
-        score = accuracy_score(y_val_fold, y_pred)
+        # Calcular la curva AUC-PR
+        precision, recall, _ = precision_recall_curve(y_test, y_scores)
+        pr_auc = auc(recall, precision)
 
-        # Guardar métricas en el log
-        logging.info(f"Fold {fold+1} - Accuracy: {score}")
+        # Realizar predicciones y calcular F1 Score
+        f1 = f1_score(y_test, y_pred)
 
-        # Verificar si el modelo es el mejor hasta ahora
-        if score > best_score:
-            best_score = score
-            best_model = model
+        auc_lis.append(roc_auc)
+        pr_lis.append(pr_auc)
+        f1_lis.append(f1)
+        n_estimators_lis.append(model.best_params_["n_estimators"])
+        max_depth_lis.append(model.best_params_["max_depth"])
+        min_samples_split_lis.append(model.best_params_["min_samples_split"])
+        min_samples_leaf_lis.append(model.best_params_["min_samples_leaf"])
+ 
 
-    # Guardar el mejor modelo y sus hiperparámetros
-    dump(best_model, cfg.model.model_path)
-
-    # Guardar los hiperparámetros del mejor modelo
-    with open('best_model_params.log', 'w') as f:
-        f.write(f"Best Model Accuracy: {best_score}\n")
-        f.write(f"Hiperparameters: {best_model.get_params()}")
-
+ 
 if __name__ == "__main__":
-    train_RandomForest()
+        CrossValidation()
